@@ -1,0 +1,88 @@
+{
+  "api_name": "GetCID API",
+  "version": "1.0",
+  "base_url": "https://getcid.info/api",
+  "method": "GET",
+  "endpoint": "/{iid}/{token}",
+  "parameters": {
+    "iid": {
+      "type": "string",
+      "required": true,
+      "description": "Microsoft Windows/Office Installation ID"
+    },
+    "token": {
+      "type": "string",
+      "required": true,
+      "description": "Registered API Verification Token"
+    }
+  },
+  "example_request": {
+    "url": "https://getcid.info/api/539979038249031308832790330685369121397625732562087764155620325/test1234567",
+    "iid": "539979038249031308832790330685369121397625732562087764155620325",
+    "token": "test1234567"
+  },
+  "possible_responses": {
+    "success": {
+      "status": "success",
+      "cid": "260150672771490322851855366226271886248373443125"
+    },
+    "activation_errors": [
+      {
+        "status": "error",
+        "message": "Wrong IID."
+      },
+      {
+        "status": "error",
+        "message": "Blocked IID."
+      },
+      {
+        "status": "error",
+        "message": "Exceeded IID."
+      },
+      {
+        "status": "error",
+        "message": "Need to call M$ Support."
+      },
+      {
+        "status": "error",
+        "message": "Not legimate key. Maybe blocked."
+      }
+    ],
+    "rate_limit_errors": [
+      {
+        "status": "error",
+        "message": "Your IP reach request limit."
+      },
+      {
+        "status": "error",
+        "message": "Your IP is being locked."
+      },
+      {
+        "status": "error",
+        "message": "Your IID reach request limit."
+      },
+      {
+        "status": "error",
+        "message": "Your IID is being locked."
+      }
+    ],
+    "token_errors": [
+      {
+        "status": "error",
+        "message": "Sorry, API Token cannot be empty."
+      },
+      {
+        "status": "error",
+        "message": "Sorry, your API Token does not exist."
+      },
+      {
+        "status": "error",
+        "message": "Sorry, your API Token has been used 5/5 times."
+      }
+    ],
+    "server_error": {
+      "status": "error",
+      "message": "Server too busy."
+    }
+  }
+}
