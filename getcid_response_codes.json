@@ -1,0 +1,34 @@
+{
+  "cid_api_responses": {
+    "success": {
+      "type": "CID",
+      "example": "260150672771490322851855366226271886248373443125"
+    },
+    "activation_errors": [
+      "Wrong IID.",
+      "Blocked IID.",
+      "Exceeded IID.",
+      "Need to call M$ Support.",
+      "Not legimate key. Maybe blocked."
+    ],
+    "rate_limit_errors": [
+      "Your IP reach request limit.",
+      "Your IP is being locked.",
+      "Your IID reach request limit.",
+      "Your IID is being locked."
+    ],
+    "token_errors": [
+      "Sorry, API Token cannot be empty.",
+      "Sorry, your API Token does not exist.",
+      "Sorry, your API Token has been used 5/5 times."
+    ],
+    "server_error": "Server too busy."
+  },
+  "redeem_api": {
+    "description": "Check whether the Microsoft digital key is still available.",
+    "responses": {
+      "Redeemed": "Redeemed",
+      "Active": "Available"
+    }
+  }
+}
